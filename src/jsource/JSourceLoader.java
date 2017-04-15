@@ -1,6 +1,5 @@
 package jsource;
 
-
 /**
  * JSourceLoader.java	12/17/02
  *
@@ -16,18 +15,17 @@ package jsource;
  */
 
 import jsource.gui.SplashScreen;
-import jsource.util.GCManager;
 
 /**
- * <code>JSourceLoader</code> is the driver class that launches
- * JSource IDE and schedules the garbage collector.
+ * <code>JSourceLoader</code> is the driver class that launches JSource IDE and
+ * schedules the garbage collector.
  *
- * @author Panagiotis Plevrakis
- * <br>Email: pplevrakis@hotmail.com
- * <br>URL:   http://jsource.sourceforge.net
+ * @author Panagiotis Plevrakis <br>
+ *         Email: pplevrakis@hotmail.com <br>
+ *         URL: https://github.com/plevrakis/jsource
  */
 public class JSourceLoader {
-    public static void main(String[]args) {
+	public static void main(String[] args) {
 		new SplashScreen();
-    }
+	}
 }
