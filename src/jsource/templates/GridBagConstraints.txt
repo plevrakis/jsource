@@ -1,0 +1,11 @@
+gbc            = new GridBagConstraints();
+gbc.fill       = GridBagConstraints.BOTH;        // HORIZONTAL   VERTICAL
+gbc.insets     = new Insets(0,0,0,0);            // top, left, bottom, right
+gbc.gridx      = 0;                              // any x coordinate
+gbc.gridy      = 0;                              // any y coordinate
+gbc.gridwidth  = GridBagConstraints.REMAINDER;   // or a number
+gbc.gridheight = GridBagConstraints.REMAINDER;   // or a number
+gbc.anchor     = GridBagConstraints.NORTHWEST;   // NORTH, SOUTH, EAST, WEST and combinations
+gbc.weightx    = 1.0;                            // any number
+gbc.weighty    = 1.0;                            // any number
+aContainerName.add(aElementName,gbc);            // provide here your names

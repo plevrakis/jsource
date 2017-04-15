@@ -1,0 +1,12 @@
+    /** 
+     * Provide here your method description
+     * description continuation (if needed)
+     * <br>
+     * @return retValue // return value description
+     */
+    public ReturnType getName() {
+
+       // insert here the getter code
+
+       return (returnValue);
+    }

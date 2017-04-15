@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="" elementFormDefault="qualified"> 
+    <xs:element name="data">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:sequence>
+                    <xs:element name="entry" type="xs:integer"/>
+                    <xs:element name="date" type="xs:string"/>
+                    <xs:element name="value" type="xs:decimal"/>
+                    <xs:element name="change" type="xs:decimal"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema> 

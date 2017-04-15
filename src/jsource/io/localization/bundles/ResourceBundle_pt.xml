@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE>
+  <LANGUAGE name="pt">
+    <RES key="language" type="String">Portuguese</RES>
+    <RES key="file" type="String">Ficheiro</RES>
+    <RES key="open" type="String">Abrir</RES>
+    <RES key="close" type="String">Fechar</RES>
+    <RES key="new" type="String">Novo</RES>
+    <RES key="edit" type="String">Editar</RES>
+    <RES key="delete" type="String">Eliminar</RES>
+    <RES key="cut" type="String">Cortar</RES>
+    <RES key="copy" type="String">Copiar</RES>
+    <RES key="paste" type="String">Colar</RES>
+  </LANGUAGE>
+</RESOURCE>
+

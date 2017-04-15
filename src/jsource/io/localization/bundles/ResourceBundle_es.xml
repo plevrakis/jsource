@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE>
+  <LANGUAGE name="es">
+    <RES key="language" type="String">Spanish</RES>
+    <RES key="file" type="String">Archivo</RES>
+    <RES key="open" type="String">Abrir</RES>
+    <RES key="close" type="String">Cerrar</RES>
+    <RES key="new" type="String">Nuevo</RES>
+    <RES key="edit" type="String">Edicion</RES>
+    <RES key="delete" type="String">Eliminar</RES>
+    <RES key="cut" type="String">Cortar</RES>
+    <RES key="copy" type="String">Copiar</RES>
+    <RES key="paste" type="String">Pegar</RES>
+  </LANGUAGE>
+</RESOURCE>
+

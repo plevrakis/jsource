@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE>
+  <LANGUAGE name="it">
+    <RES key="language" type="String">Italian</RES>
+    <RES key="file" type="String">File</RES>
+    <RES key="open" type="String">Apri</RES>
+    <RES key="close" type="String">Chiudi</RES>
+    <RES key="new" type="String">Nuovo</RES>
+    <RES key="edit" type="String">Modifica</RES>
+    <RES key="delete" type="String">Elimina</RES>
+    <RES key="cut" type="String">Taglia</RES>
+    <RES key="copy" type="String">Copia</RES>
+    <RES key="paste" type="String">Incolla</RES>
+  </LANGUAGE>
+</RESOURCE>
+

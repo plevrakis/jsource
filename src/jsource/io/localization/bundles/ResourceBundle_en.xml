@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE>
+  <LANGUAGE name="en">
+  
+    <RES key="language"      type="String">English</RES>
+    <RES key="exit"          type="String">Exit</RES>
+    <RES key="file"          type="String">File</RES>
+    <RES key="edit"          type="String">Edit</RES>
+    <RES key="view"          type="String">View</RES>
+    <RES key="tools"         type="String">Tools</RES>
+    <RES key="help"          type="String">Help</RES>
+    <RES key="open"          type="String">Open</RES>
+    <RES key="close"         type="String">Close</RES>
+    <RES key="save"          type="String">Save</RES>
+    <RES key="saveas"        type="String">Save As</RES>
+    <RES key="new"           type="String">New</RES>
+    <RES key="delete"        type="String">Delete</RES>
+    <RES key="undo"          type="String">Undo</RES>
+    <RES key="redo"          type="String">Redo</RES>
+    <RES key="cut"           type="String">Cut</RES>
+    <RES key="copy"          type="String">Copy</RES>
+    <RES key="paste"         type="String">Paste</RES>
+    <RES key="selectall"     type="String">Select All</RES>
+    <RES key="gotoline"      type="String">Go to line...</RES>
+    <RES key="indent"        type="String">Indent Line(s)</RES>
+    <RES key="indentdesc"    type="String">Indents the selected lines</RES>
+    <RES key="comment"       type="String">Comment Line(s)</RES>
+    <RES key="commentdesc"   type="String">Comments the selected lines</RES>
+    <RES key="uncomment"     type="String">Uncomment Line(s)</RES>
+    <RES key="uncommentdesc" type="String">Uncomments the selected lines</RES>
+    <RES key="whatline"      type="String">What line would you like to go to?</RES>
+    <RES key="invalidline"   type="String">Invalid line number</RES>
+    <RES key="noline"        type="String">No line number was entered. Try again.</RES>
+    <RES key="lineoffrange"  type="String">Invalid or out of range line number. Try again.</RES>
+    <RES key="linenumbers"   type="String">Line Numbers</RES>
+    <RES key="overwrite"     type="String">Enable/Disable overwrite</RES>
+    <RES key="code"          type="String">Code</RES>
+    <RES key="guitemp"       type="String">GUI Templates</RES>
+    <RES key="beantemp"      type="String">Bean Templates</RES>
+    <RES key="javadoctemp"   type="String">JavaDoc Templates</RES>
+    <RES key="debugtemp"     type="String">Debug Templates</RES>
+    <RES key="looptemp"      type="String">Loop Templates</RES>
+    <RES key="moretemp"      type="String">More Templates</RES>
+    <RES key="setter"        type="String">Setter Method</RES>
+    <RES key="getter"        type="String">Getter Method</RES>
+    <RES key="classdesc"     type="String">Class Description</RES>
+    <RES key="compile"       type="String">Compile</RES>
+    <RES key="compiling"     type="String">Compiling</RES>
+    <RES key="cannotcompile" type="String">Cannot compile</RES>
+    <RES key="running"       type="String">Running</RES>
+    <RES key="cannotrun"     type="String">Cannot run</RES>
+    <RES key="procfailure"   type="String">Process failure</RES>
+    <RES key="procsuccess"   type="String">Process success</RES>
+    <RES key="run"           type="String">Run</RES>
+    <RES key="applet"        type="String">Applet Viewer</RES>
+    <RES key="browser"       type="String">Preview Web Page</RES>
+    <RES key="apiviewer"     type="String">Java API Viewer</RES>
+    <RES key="apiviewerdesc" type="String">View Core and external Java APIs</RES>
+    <RES key="toolsetup"     type="String">Set paths to external tools</RES>
+    <RES key="helpindex"     type="String">Help</RES>
+    <RES key="findcoreapi"   type="String">Find Core Java API</RES>
+    
+    <RES key="newdesc"       type="String">Open a new empty document</RES>
+    <RES key="opendesc"      type="String">Open the selected file</RES>
+    <RES key="closedesc"     type="String">Close the current file</RES>
+    <RES key="cutdesc"       type="String">Cut selected text</RES>
+    <RES key="copydesc"      type="String">Copy text to clipboard</RES>
+    <RES key="pastedesc"     type="String">Paste text from clipboard</RES>
+    <RES key="savedesc"      type="String">Save changes of the current file</RES>
+    <RES key="saveasdesc"    type="String">Save changing the existing file name</RES>
+    <RES key="undodesc"      type="String">Undo last action</RES>
+    <RES key="redodesc"      type="String">Redo last action</RES>
+    <RES key="selectalldesc" type="String">Select the entire document</RES>
+    <RES key="compiledesc"   type="String">Compile</RES>
+    <RES key="rundesc"       type="String">Run Java Application</RES>
+    <RES key="appletdesc"    type="String">Run Applet</RES>
+    <RES key="browserdesc"   type="String">Open Web Browser</RES>
+    
+    <RES key="untitleddoc"   type="String">Untitled Document</RES>
+    <RES key="untitledtab"   type="String">Untitled</RES>
+    <RES key="lineslabel"    type="String">Lines:</RES>
+    <RES key="charslabel"    type="String">Characters:</RES>
+    
+    <RES key="version"       type="String">JSource Version 2.0</RES>
+    <RES key="about"         type="String">About</RES>
+    <RES key="aboutjsource"  type="String">About JSource</RES>
+    
+    <RES key="gencode"       type="String">Code Generator</RES>
+    <RES key="gencodedesc"   type="String">Launch code generator</RES>
+    <RES key="import"        type="String">Import</RES>
+    <RES key="add"           type="String">Add</RES>
+    <RES key="remove"        type="String">Remove</RES>
+    <RES key="removeall"     type="String">Remove All</RES>
+    <RES key="generate"      type="String">Generate</RES>
+    <RES key="readonly"      type="String">Readonly</RES>
+    <RES key="propertyname"  type="String">Property name</RES>
+    <RES key="propertytype"  type="String">Property type</RES>
+    <RES key="deftitle"      type="String">Define properties - Import classes</RES>
+    <RES key="definition"    type="String">Definition</RES>
+    <RES key="language"      type="String">Language</RES>
+    <RES key="classname"     type="String">Class name</RES>
+    <RES key="members"       type="String">Members</RES>
+    <RES key="constructors"  type="String">Constructors</RES>
+    <RES key="propemptymsg"  type="String">Property name may not be empty!</RES>
+    <RES key="selectrowmsg"  type="String">You must select a row!</RES>
+    
+    <RES key="findreplace"   type="String">Find/Replace</RES>
+    <RES key="findrepdesc"   type="String">Find/replace words and characters</RES>
+    <RES key="wrappedmsg"    type="String">Search wrapped to beginning</RES>
+    <RES key="searchtext"    type="String">Search text</RES>
+    <RES key="notfound"      type="String">not found</RES>
+    <RES key="findnext"      type="String">Find Next</RES>
+    <RES key="replace"       type="String">Replace</RES>
+    <RES key="repfindnext"   type="String">Replace/Find Next</RES>
+    <RES key="replacefailed" type="String">Replace failed</RES>
+    <RES key="replaceall"    type="String">Replace All</RES>
+    <RES key="replaced"      type="String">Replaced </RES>
+    <RES key="occurrence"    type="String">occurrence</RES>
+    <RES key="find"          type="String">Find</RES>
+    <RES key="matchcase"     type="String">Match Case</RES>
+    
+    <RES key="pathsetitle"   type="String">Set paths to external tools</RES>
+    <RES key="findsdk"       type="String">Find SDK</RES>
+    <RES key="findant"       type="String">Find ANT</RES>
+    <RES key="findbrowser"   type="String">Find Web Browser</RES>
+    
+    <RES key="asksave"       type="String">has been modified. \nSave before closing?</RES>
+    <RES key="asksavetitle"  type="String">Save</RES>
+    <RES key="askrload"      type="String">The file's time stamp has changed. \nDo you want to reload</RES>
+    <RES key="askrloadtitle" type="String">Reload</RES>
+    
+    <RES key="versionwarn"   type="String">WARNING: Swing must be run with a 1.1.2 or higher version VM!</RES>
+    
+  </LANGUAGE>
+</RESOURCE>
+

@@ -1,0 +1,4 @@
+while ( /* Your while condition */)
+{  /* ... start while */
+   // insert here the action statements
+}  /* ... end while */

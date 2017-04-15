@@ -1,0 +1,13 @@
+switch ( /* your variable */ ) // allowed types: byte, char, short, int
+{  /* ... start switch */
+   case 0 :           // provide your required value
+      // your code
+      break;
+   case 1 :           // provide your required value
+      // your code
+      break;
+
+   default:
+      // your code
+      break;
+}  /* ... end switch */

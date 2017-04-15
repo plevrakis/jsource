@@ -1,0 +1,5 @@
+    if ( /* provide here the condition */ ) {
+        // condition true code
+    }  else {
+       // condition false code
+    }
