@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<!--
+     This is the xml file used by Ant for fast building JSource without creating distribution files.
+-->
+
+<project name="jsource" default="init" basedir=".">
+   
+   <!-- global properties -->
+   <property file="build.properties"/>
+   <property name="name" value="${projectname}"/>
+   <property name="version" value="${version}"/>
+   <property name="year" value="${year}"/>
+   <property name="source.dir" value="${src.dir}" />
+   <property name="build.dir" value="${build.dir}" />
+   <property name="build.classes.dir" value="${classes.dir}"/>
+   <property name="dist.dir" value="${dist.dir}" />
+   <property name="javadoc.dir" value="${doc.dir}" />
+   <property name="lib.dir" value="${lib.dir}" />
+   <property name="conf.dir" value="${basedir}/conf" />
+   <property name="main.class" value="${mainclass}"/>
+   <property name="runtime.classpath" value="${build.classes.dir}/calpa.jar ${build.classes.dir}/kunststoff.jar"/>
+   <property name="jarname" value="${jar.name}.jar" />
+   <property name="dist.base.name" value="${name}-${version}" />
+   <property name="dist.src.name" value="${dist.base.name}-src" />
+   <property name="dist.bin.name" value="${dist.base.name}-bin" />
+   
+   <!-- compile options -->
+   <property name="debug" value="on"/>
+   <property name="optimize" value="on"/>
+  
+
+    <!-- classpath -->
+    <path id="classpath">
+       
+       <pathelement path="${build.classes.dir}" />
+       <fileset dir="${lib.dir}" >
+          <include name="*.jar" />
+          <include name="*.zip" />
+       </fileset>
+    
+    </path>
+
+    <!-- files for jar distribution -->
+    <fileset dir="${build.classes.dir}" id="pack">
+        
+        <include name="jsource/*.class"/>
+ 	<include name="jsource/codegenerator/*.class"/>
+ 	<include name="jsource/gui/*.class"/>
+ 	<include name="jsource/actions/*.class"/>
+ 	<include name="jsource/io/*.class"/>
+ 	<include name="jsource/io/localization/*.class"/>
+ 	<include name="jsource/syntax/*.class"/>
+ 	<include name="jsource/syntax/tokenmarker/*.class"/>
+ 	<include name="jsource/util/*.class"/>
+	<include name="jsource/console/*.class"/>
+ 	<include name="jsource/images/*.jpg"/>
+ 	<include name="jsource/images/*.gif"/>
+        <include name="jsource/templates/*.txt"/>
+    
+    </fileset>
+    
+    <target name="init" depends="compile, package">
+    
+        <!-- set time stamp -->
+        <tstamp/>
+        
+    </target>
+	
+    <!-- ============================================================================= -->
+    <!-- Compiles the source directory                                                 -->
+    <!-- ============================================================================= -->
+    <target name="compile" description="Source files compilation">
+        
+        <javac srcdir="${source.dir}" 
+               destdir="${build.classes.dir}"
+               deprecation="on"
+	       includeJavaRuntime="yes"
+        >
+	        <include name="jsource/*.java"/>
+	        <include name="jsource/io/*.java"/>
+	        <include name="jsource/io/localization/*.java"/>
+	        <include name="jsource/gui/*.java"/>
+	        <include name="jsource/actions/*.java"/>
+	        <include name="jsource/codegenerator/*.java"/>
+	        <include name="jsource/util/*.java"/>
+                <include name="jsource/syntax/*.java"/>
+                <include name="jsource/syntax/tokenmarker/*.java"/>
+                <include name="jsource/syntax/indent/*.java"/>
+                <include name="jsource/syntax/reducedmodel/*.java"/>
+                <include name="jsource/console/*.java"/>
+            
+            	<classpath>
+            	    <path refid="classpath"/>
+            	</classpath>
+        </javac>
+    
+    </target>
+    
+    <!-- ================================================================= -->
+    <!-- Creates the jar file                                              -->
+    <!-- ================================================================= -->
+    <target name= "package" description="Create a jar file">
+        
+        <tstamp>
+        	<format property="ts" pattern="yyyyMMdd-HHmmss-z"/>
+        </tstamp>
+
+        <jar jarfile="${build.classes.dir}/${jarname}">
+		<fileset refid="pack"/>
+                <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+                <attribute name="Class-Path" value="${runtime.classpath}"/>
+                <attribute name="Implementation-Title" value="${name}"/>
+                <attribute name="Implementation-Version" value="${version}"/>
+                <attribute name="Implementation-Vendor" value="http://jsource.sourceforge.net"/>
+                <attribute name="Build-Id" value="(${user.name} [${os.name} ${os.version} ${os.arch}])"/>
+                </manifest>
+        </jar>
+        
+    </target>
+	
+</project>

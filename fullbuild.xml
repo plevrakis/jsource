@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+
+<!--
+     This is the xml file used by Ant to build the full distribution of JSource.
+-->
+
+<project name="jsource" default="dist" basedir=".">
+   
+   <!-- global properties -->
+   <property file="build.properties"/>
+   <property name="name" value="${projectname}"/>
+   <property name="version" value="${version}"/>
+   <property name="year" value="${year}"/>
+   <property name="source.dir" value="${src.dir}" />
+   <property name="build.dir" value="${build.dir}" />
+   <property name="build.classes.dir" value="${classes.dir}"/>
+   <property name="dist.dir" value="${dist.dir}" />
+   <property name="javadoc.dir" value="${doc.dir}" />
+   <property name="lib.dir" value="${lib.dir}" />
+   <property name="conf.dir" value="${basedir}/conf" />
+   <property name="main.class" value="${mainclass}"/>
+   <property name="runtime.classpath" value="lib/calpa.jar lib/kunststoff.jar lib/docwiz.jar lib/ant.jar lib/j2h.jar lib/tools.jar lib/gnu.jar JSource2.0.jar"/>
+   <property name="jarname" value="${jar.name}.jar" />
+   <property name="dist.base.name" value="${name}-${version}" />
+   <property name="dist.src.name" value="${dist.base.name}-src" />
+   <property name="dist.bin.name" value="${dist.base.name}-bin" />
+   
+   <!-- compile options -->
+   <property name="debug" value="on"/>
+   <property name="optimize" value="on"/>
+    
+    <!-- =================================================================== -->
+    <!-- Shows project information                                           -->
+    <!-- =================================================================== -->
+    <target name="info" description="Prints a short summary of this project">
+        <echo message="" />
+        <echo message="JSource Java IDE" />
+        <echo message="================" />
+        <echo message="" />
+        <echo message="This application is an open source Java IDE" />
+        <echo message="and a general programming editor" />
+        <echo message="" />
+        <echo message="" />
+        <echo message="Use 'ant -projecthelp' to show available targets" />
+    </target>
+
+    <!-- classpath -->
+    <path id="classpath">
+       
+       <pathelement path="${build.classes.dir}" />
+       <fileset dir="${lib.dir}" >
+          <include name="*.jar" />
+          <include name="*.zip" />
+       </fileset>
+    
+    </path>
+
+    <!-- files for binary distribution -->
+    <fileset dir="${build.classes.dir}" id="dist.bin">
+	
+	<include name="run.bat"/>
+	<include name="jsource/*.class"/>
+	<include name="*.jar"/>
+	<include name="jsource/codegenerator/**/*.class"/>
+	<include name="jsource/gui/*.class"/>
+	<include name="jsource/actions/*.class"/>
+	<include name="jsource/io/*.*"/>
+	<include name="jsource/io/localization/*.class"/>
+	<include name="jsource/io/localization/bundles/*.*"/>
+	<include name="jsource/syntax/*.class"/>
+	<include name="jsource/syntax/tokenmarker/*.class"/>
+	<include name="jsource/util/*.class"/>
+	<include name="jsource/console/*.class"/>
+	<include name="jsource/images/*.*"/>
+	<include name="jsource/templates/*.txt"/>
+	<include name="jsource/tools/*.*"/>
+	<include name="lib/*.jar"/>
+	
+    </fileset>
+    
+    <!-- files for source distribution -->
+    <fileset dir="${basedir}" id="dist.src">
+        
+        <include name="fastbuild.xml"/>
+        <include name="fullbuild.xml"/>
+        <include name="build.properties"/>
+        <include name="src/**"/>
+    
+    </fileset>
+    
+    <!-- files for jar distribution -->
+    <fileset dir="${build.classes.dir}" id="pack">
+        
+        <include name="jsource/*.class"/>
+ 	<include name="jsource/codegenerator/*.class"/>
+ 	<include name="jsource/gui/*.class"/>
+ 	<include name="jsource/actions/*.class"/>
+ 	<include name="jsource/io/*.class"/>
+ 	<include name="jsource/io/localization/*.class"/>
+ 	<include name="jsource/syntax/*.class"/>
+ 	<include name="jsource/syntax/tokenmarker/*.class"/>
+ 	<include name="jsource/util/*.class"/>
+	<include name="jsource/console/*.class"/>
+ 	<include name="jsource/images/*.jpg"/>
+ 	<include name="jsource/images/*.gif"/>
+        <include name="jsource/templates/*.txt"/>
+    
+    </fileset>
+   
+   <!-- ===================================================================== -->
+   <!-- Test Java version.                                                    -->
+   <!-- ===================================================================== -->
+   <target name="testjava">
+      <condition property="oldJava">
+         <or>
+            <equals arg1="1.3" arg2="${ant.java.version}" />
+         </or>
+      </condition>
+   </target>
+   
+    <target name="init" depends="info, clean">
+    
+        <!-- set time stamp -->
+        <tstamp/>
+        <!-- directory structure -->
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${build.classes.dir}" />
+        <mkdir dir="${javadoc.dir}" />
+        <mkdir dir="${dist.dir}" />
+
+        <echo message="------------------- ${name} ${version} [${year}] ----------------"/>
+
+        <!-- printout some useful status information -->
+        <echo message="ant.java.version:        ${ant.java.version}" />
+        <echo message="ant.file:                ${ant.file}" />
+        <echo message="" />
+
+        <echo message="java.vm.version:         ${java.vm.version}" />
+        <echo message="java.vm.vendor:          ${java.vm.vendor}" />
+        <echo message="java.vm.name:            ${java.vm.name}" />
+        <echo message="" />
+
+        <echo message="os.name:                 ${os.name}" />
+        <echo message="os.arch:                 ${os.arch}" />
+        <echo message="os.version:              ${os.version}" />
+      
+        <echo message="" />
+        <echo message="file.separator:          ${file.separator}" />
+        <echo message="path.separator:          ${path.separator}" />
+        <echo message="line.separator:          ${line.separator}" />
+        <echo message="" />
+        <echo message="user.name:               ${user.name}" />
+        <echo message="user.home:               ${user.home}" />
+        <echo message="user.dir:                ${user.dir}" />
+        
+    </target>
+	
+    <!-- ============================================================================= -->
+    <!-- Compiles the source directory                                                 -->
+    <!-- ============================================================================= -->
+    <target name="compile" depends="init, javadoc, javatohtml" description="Source files compilation">
+        
+        <javac srcdir="${source.dir}" 
+               destdir="${build.classes.dir}"
+               deprecation="on"
+	       includeJavaRuntime="yes"
+        >
+	        <include name="jsource/*.java"/>
+	        <include name="jsource/io/*.java"/>
+	        <include name="jsource/io/localization/*.java"/>
+	        <include name="jsource/gui/*.java"/>
+	        <include name="jsource/actions/*.java"/>
+	        <include name="jsource/codegenerator/*.java"/>
+	        <include name="jsource/util/*.java"/>
+                <include name="jsource/syntax/*.java"/>
+                <include name="jsource/syntax/tokenmarker/*.java"/>
+                <include name="jsource/syntax/indent/*.java"/>
+                <include name="jsource/syntax/reducedmodel/*.java"/>
+                <include name="jsource/console/*.java"/>
+            
+            	<classpath>
+            	    <path refid="classpath"/>
+            	</classpath>
+        </javac>
+    
+    </target>
+	
+    <!-- =================================================================== -->
+    <!-- Cleans build directory                                              -->
+    <!-- =================================================================== -->
+    <target name="clean" description="Workspace cleanup">
+    	<delete>
+    		<fileset dir="${build.classes.dir}" includes="${jar.name}"/>
+    		<fileset dir="${build.classes.dir}" includes="jsource/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/codegenerator/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/gui/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/actions/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/io/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/io/localization/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/syntax/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/syntax/tokenmarker/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/util/*.class"/>
+		<fileset dir="${build.classes.dir}" includes="jsource/console/*.class"/>
+	</delete>
+        <delete dir="${javadoc.dir}" />
+        <delete dir="${dist.dir}" />
+    </target>
+    
+    <!-- ================================================================================== -->
+    <!-- Creates the API documentation                                                      -->
+    <!-- ================================================================================== -->
+    <target name= "javadoc" description="Creates the javadoc API documentation">
+        <javadoc packagenames="jsource.*" 
+                 sourcepath="${source.dir}" 
+                 destdir="${javadoc.dir}"
+                 doctitle="${Name}"
+                 windowtitle="${name} API"
+                 header="jsource"
+                 footer="jsource"
+                 author="true"
+		 version="true">
+            
+            <classpath>
+                <path refid="classpath"/>
+            </classpath>
+        </javadoc>
+    </target>
+	
+    <!-- ================================================================= -->
+    <!-- Creates the jar file                                              -->
+    <!-- ================================================================= -->
+    <target name= "package" depends="compile" description="Create a jar file">
+        
+        <tstamp>
+        	<format property="ts" pattern="yyyyMMdd-HHmmss-z"/>
+        </tstamp>
+
+        <jar jarfile="${build.classes.dir}/${jarname}">
+		<fileset refid="pack"/>
+                <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+                <attribute name="Class-Path" value="${runtime.classpath}"/>
+                <attribute name="Implementation-Title" value="${name}"/>
+                <attribute name="Implementation-Version" value="${version}"/>
+                <attribute name="Implementation-Vendor" value="http://jsource.sourceforge.net"/>
+                <attribute name="Build-Id" value="(${user.name} [${os.name} ${os.version} ${os.arch}])"/>
+                </manifest>
+        </jar>
+        
+    </target>
+    
+    <target name= "all" depends="clean, compile, package" description="Clean, Compile, Jar">
+    </target>
+    
+    <!-- =================================================================== -->
+    <!-- Creates the distribution                                            -->
+    <!-- =================================================================== -->
+    <target name= "dist" depends="dist-bin, dist-src"   description="Creates all distribution archives">
+    </target>
+
+    <target name= "dist-bin" depends="dist-bin-zip, dist-bin-tgz, dist-bin-nosubdir-zip, dist-bin-scripting-nosubdir-zip" description="Create a Zip and TGZ Archives with all the binary files">
+    </target>
+
+    <target name= "dist-bin-prepare" depends="package"  description="Prepares binary distribution">
+        <delete dir="${dist.dir}/${dist.base.name}"/>
+        <copy todir="${dist.dir}/${dist.base.name}">
+            <fileset refid="dist.bin"/>
+        </copy>
+
+        <copy todir="${build.classes.dir}/lib"
+                file="${lib.dir}/calpa.jar">
+        </copy>
+        
+        <copy todir="${build.classes.dir}/lib"
+                file="${lib.dir}/kunststoff.jar">
+        </copy>
+         
+        <copy todir="${build.classes.dir}/lib"
+                 file="${lib.dir}/docwiz.jar">
+        </copy>
+       
+        <copy todir="${build.classes.dir}/lib"
+                 file="${lib.dir}/ant.jar">
+        </copy>
+        
+        <copy todir="${build.classes.dir}/lib"
+                 file="${lib.dir}/j2h.jar">
+        </copy>
+        
+        <copy todir="${dist.dir}/build/lib"
+                file="${build.classes.dir}/lib/calpa.jar">
+        </copy>
+        
+        <copy todir="${dist.dir}/build/lib"
+                file="${build.classes.dir}/lib/kunststoff.jar">
+        </copy>
+
+        <copy todir="${dist.dir}/build/lib"
+                file="${build.classes.dir}/lib/docwiz.jar">
+        </copy>
+ 
+        <copy todir="${dist.dir}/build/lib"
+                file="${build.classes.dir}/lib/ant.jar">
+        </copy>
+        
+        <copy todir="${dist.dir}/build/lib"
+                file="${build.classes.dir}/lib/j2h.jar">
+        </copy>
+
+        <copy todir="${dist.dir}/build/lib"
+                file="${build.classes.dir}/lib/gnu.jar">
+        </copy>
+        
+        <copy todir="${dist.dir}/build"
+                file="${build.classes.dir}/${jarname}">
+        </copy> 
+        
+        <copy todir="${dist.dir}/build">
+            <fileset refid="dist.bin"/>
+        </copy>
+    </target>
+
+    <target name= "dist-bin-zip" depends="dist-bin-prepare" 
+            description="Create a Zip-File with all the binary files">
+        <zip zipfile="${dist.dir}/${dist.bin.name}.zip"
+            basedir="${dist.dir}/"
+            includes="${dist.base.name}/**">
+        </zip>
+    </target>
+
+    <target name= "dist-bin-nosubdir-zip" depends="dist-bin-prepare" 
+            description="Create a Zip-File with all the binary files no sub directory">
+        <zip zipfile="${dist.dir}/${dist.bin.name}-nosubdir.zip"
+            basedir="${dist.dir}/${dist.base.name}"
+            includes="**"
+        />
+    </target>
+
+    <target name= "dist-bin-scripting-nosubdir-zip" depends="dist-bin-prepare" 
+            description="Create a Zip-File with all the binary files no sub directory">
+        <zip zipfile="${dist.dir}/${dist.bin.name}-full-nosubdir.zip"
+            basedir="${dist.dir}/${dist.base.name}"
+            includes="**">
+        </zip>
+    </target>
+
+    <target name= "dist-bin-tgz" depends="dist-bin-prepare" description="Create a Tgz-File with all the binary files">
+        <tar tarfile="${dist.dir}/${dist.bin.name}tar.tar"
+            basedir="${dist.dir}/"
+            includes="${dist.base.name}/**">
+        </tar>
+        <gzip zipfile="${dist.dir}/${dist.bin.name}tar.tgz" src="${dist.dir}/${dist.bin.name}tar.tar" />
+        <delete file="${dist.dir}/${dist.bin.name}tar.tar"/>
+    </target>
+
+    <target name= "dist-src" depends="dist-src-zip, dist-src-tgz" 
+                             description="Create a Zip and TGZ Archives with all source files">
+    </target>
+
+    <target name= "dist-src-prepare" depends="package" description="Prepares source distribution">
+        <delete dir="${dist.dir}/${dist.base.name}"/>
+        <mkdir dir="${dist.dir}/${dist.base.name}"/>
+        <copy todir="${dist.dir}/${dist.base.name}">
+            <fileset refid="dist.src"/>
+        </copy>
+    </target>
+
+    <target name= "dist-src-zip" depends="dist-src-prepare" description="Create a Zip-File with all the source files">
+        <zip zipfile="${dist.dir}/${dist.src.name}.zip"
+            basedir="${dist.dir}/"
+            includes="${dist.base.name}/**"
+        />
+    </target>
+
+    <target name= "dist-src-tgz" depends="dist-src-prepare" description="Create a Tgz-File with all the source files">
+        <tar tarfile="${dist.dir}/${dist.src.name}tar.tar"
+            basedir="${dist.dir}/"
+            includes="${dist.base.name}/**">
+        </tar>
+        <gzip zipfile="${dist.dir}/${dist.src.name}tar.tgz" src="${dist.dir}/${dist.src.name}tar.tar" />
+        <delete file="${dist.dir}/${dist.src.name}tar.tar"/>
+    </target>
+    
+   <taskdef name="java2html" classname="com.java2html.Java2HTMLTask">
+        <classpath>
+            <path refid="classpath"/>
+        </classpath>
+   </taskdef>
+
+   <target name="javatohtml">
+   	<echo message="             Creating browsable JSource code" />
+	<java2html title="Browse JSource code" 
+		   simple="no"
+		   tabsize="4"
+		   marginsize="2"
+		   header="true"
+		   footer="false"
+		   destination="html">
+		
+		<fileset dir="${basedir}">
+		        <include name="src/**/*.java"/>
+                </fileset>
+		<javadoc localRef="C:\JavaDocs\api" httpRef="http://java.sun.com/j2se/1.4.1/docs/api/"/>
+		<javadoc localRef="C:\ant15\docs\manual\api"/>
+	</java2html>
+    </target>
+    
+</project>
