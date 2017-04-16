@@ -1,50 +1,66 @@
 package jsource.gui;
 
 
-/**
- * MainFrame.java 12/17/02
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published
- * by the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- */
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.Console;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 
-import jsource.*;
-import jsource.syntax.*;
-import jsource.syntax.tokenmarker.*;
-import jsource.util.*;
-import jsource.io.*;
-import jsource.io.localization.*;
-import jsource.codegenerator.*;
+import javax.swing.AbstractListModel;
+import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTabbedPane;
+import javax.swing.JToolBar;
+import javax.swing.MutableComboBoxModel;
+import javax.swing.ToolTipManager;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.plaf.metal.DefaultMetalTheme;
+
+import jsource.com.incors.plaf.kunststoff.KunststoffLookAndFeel;
+import jsource.io.FileUnit;
+import jsource.io.localization.XMLResourceBundle;
+import jsource.syntax.Indent;
+import jsource.syntax.SyntaxDocument;
+import jsource.syntax.tokenmarker.JavaTokenMarker;
+import jsource.tinyplanet.docwiz.appDocWiz;
+import jsource.util.FileUtilities;
+import jsource.util.GUIUtilities;
+import jsource.util.JSConstants;
+import jsource.util.Log;
 import jsource.console.*;
-
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.datatransfer.*;
-
-import javax.swing.plaf.metal.*;
-import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.text.*;
-import javax.swing.plaf.*;
-import javax.swing.event.*;
-import javax.swing.colorchooser.*;
-
-import java.io.*;
-import java.util.*;
-import java.lang.reflect.*;
-import java.beans.*;
-
-import com.incors.plaf.*;
-import com.incors.plaf.kunststoff.*;
-import com.incors.plaf.kunststoff.themes.*;
-import com.tinyplanet.docwiz.JavaDocWiz;
 
 /**
  * <code>MainFrame</code> is the root container for the JSource GUI.
@@ -71,7 +87,7 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
     private String mainTitle = "JSource IDE v 2.0 ";
     private Toolkit toolkit = TOOLKIT;
     private String version = JAVA_VERSION;
-    public JavaDocWiz jdocWiz = null;
+    public appDocWiz jdocWiz = null;
     protected jsource.util.Properties jsprops = null;
     private Dimension dim = SCREEN_SIZE;
 
@@ -87,7 +103,7 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
     private jsource.io.FileReader reader = null;
     public jsource.io.FileWriter writer = null;
     public XMLResourceBundle bundle = null;
-    public Console console = null;
+    public Console2 console = null;
     private static String fs = FILE_SEP;
     private static String nl = LINE_SEP;
     public FileUnit currFile = null;
@@ -136,8 +152,17 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
     	if (OS_NAME.startsWith("Windows")) {
     	  isWindows = true;
     	}
-        setKunststoffLookAndFeel(new KunststoffCharcoalTheme());
+    	
+        //setKunststoffLookAndFeel(new KunststoffPresentationTheme());
+        
+        try {
+			UIManager.setLookAndFeel(new KunststoffLookAndFeel());
+		} catch (UnsupportedLookAndFeelException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
         setDefaultLookAndFeelDecorated(true);
+        
         //staticMain = this;
 
         if (version.compareTo("1.1.2") < 0) {
@@ -208,7 +233,7 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
 
         pane = getContentPane();
 
-        console = new Console(this, bundle);
+        console = new Console2(this, bundle);
 
         JPanel infoPanel = new JPanel(flow);
         infoPanel.add(lineCountLabel);
@@ -273,7 +298,7 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
 			}
 
       		private void repaintEditor() {
-				System.out.println("here34343");
+				// System.out.println("here34343");
 				editor.requestFocus();
 				editor.setFirstLine(0);
 			    editor.repaint();
@@ -815,7 +840,7 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
      * specific commands.
      * @return current <code>Console</code> used by JSource
      */
-    public Console getConsole() {
+    public Console2 getConsole() {
         return console;
     }
 
@@ -1115,7 +1140,7 @@ public class MainFrame extends JFrame implements JSConstants, PropertyChangeList
 			}
 			writer.writeStringToFile(currFile, editor.getText());
 			if (currFile.getFileName().endsWith("java") && currFile.getFile().length() != 0) {
-				jdocWiz = new JavaDocWiz(currFile.getFileDir(), currFile.getFileName());
+				jdocWiz = new appDocWiz(currFile.getFileDir(), currFile.getFileName());
 			} else {
 				String msg = "    " + bundle.getValueOf("notjavafile") + "    ";
         	    new MessageDialog(msg, false, this, bundle);
