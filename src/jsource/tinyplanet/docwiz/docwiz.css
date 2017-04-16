@@ -1,0 +1,43 @@
+body {margin-left: 15%;
+      background-color: #dddddd;
+      foreground-color: black;
+      margin-right: 10%;
+      font-family: Sans-serif
+     }
+h1, h2, h3, h4, h5  {
+  background-color: #099909; font-family: Sans-serif ;
+  Border: #099909;
+  color: white;
+  background-image: url("slc.gif");
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 10px;
+  }
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited {color: white}
+h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link {color:rgb(180,245,190)}
+h1 {margin-left: -14% ; font-size: larger}
+h2 {margin-left: -10%  }
+h3 {margin-left: -5%  }
+h4,h5 {margin-left: -5%  }
+
+a {font-weight: bold}
+a:link {color:rgb(3,95,90)}
+A:hover   { background: yellow }
+a:visited {color: black}
+a.biglink { font-family: Sans-serif  }
+a.littlelink { font-size: smaller }
+
+br.long {padding-bottom: 12pt}
+p.navigation{position: absolute; left: 60%; top: 200px ;float: left}
+DIV.navigation{ float:left; left: 20px; top: 90px; width: 150px; margin 4em }
+DIV.content{float}
+
+DIV.left   { width: 39%; float: left; padding:  0em 1em 0 0;
+        border-left-width: 0px;
+        border-left: 1px; border-right: 1px; border-style: none;
+        border-right-width: 0px; margin: 0;}
+
+DIV.right  { width: 49%; float: left;
+	border-right-width: 0px; border-left-width: 20px;
+	border-left: 1px; border-right: 1px;
+	border-style: none; padding:  0 0 0 1em; margin: 0;}
+

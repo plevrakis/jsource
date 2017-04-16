@@ -1,0 +1,266 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Simon Arthur">
+   <TITLE>DocWiz: The JavaDoc Documentation Tool</TITLE>
+   <LINK REL="stylesheet" HREF="docwiz.css">
+</HEAD>
+<BODY>
+<a name="top">
+<H1><a href="index.html#top">DocWiz</a> : Project DocWiz</h1>
+
+<a name="goals">
+<H2><a href="index.html#top">DocWiz</a> : <a href="#top">Project DocWiz</a> :
+Goals</h2>
+Don't let DocWiz's Beta designation scare you, it's actually quite stable
+and usable, but is missing what I consider to be essential features.
+<p>Before declaring version 1.0 ready, I will make the following
+requirements:<br>
+<ul>
+<li>Solid Java and JavaDoc parsing engine (currently there are very few known
+bugs)
+<li>A decent command-line interface, using GNU Getopt (done)
+<li>Clean interoperability with most development environments (done)
+</ul>
+I'd also like to have a freeware install program.
+<p>After 1.0, I plan to go to a split development tree, with even numbered
+releases being considered stable and experimental odd numbered releases.
+<p>Here's a rough outline of how DocWiz development might progress from
+there:
+<ul>
+<li>1.2: External editor invocation, javadoc invoker
+<li>1.4: Java 2 compliance (actually, this got done earlier than I thought)
+<li>1.6: Persistent customization, extensible tag framework (again, some of this is done already)
+<li>1.8: Tag templates (partially done with 0.67, you can now choose previously entered text from a drop down list)
+<li>2.0: Intelligent documentation hints for side-effects and the like
+<li>1000000.0: Writes all the documentation for you
+</ul>
+<p>None of this is set in stone and is highly dependent upon how
+willing everyone is to contribute.
+
+<a name="bugs">
+<H2><a href="index.html#top">DocWiz</a> : <a href="#top">Project DocWiz</a> :
+Bugs</h2>
+<ul>
+<li>DocWiz doesn't check for read-only files, bad when you're using some version control systems.
+<li>Unicode input is not fully supported, though "escaped" Unicode supposedly
+works correctly.
+<li>There are a few quirks when documenting inner classes.
+<li>Some grid controls don't automatically resize properly under Solaris.
+</ul>
+
+<a name="contribute">
+<H2><a href="index.html#top">DocWiz</a> : <a href="#top">Project DocWiz</a> :
+Contribute</h2>
+<p>You can help out by fixing bugs and adding new features. I've got several
+tasks in mind that would be great for someone just starting out.
+<p>But if that's not your bag, there's other stuff for you
+to do as well. I need a compelte set of icons and a good-looking logo. I want
+to have a gallery of screenshots, showing DocWiz running under various
+operating systems.
+<p>DocWiz needs a good automated testing setup, with a broad variety of input
+files.
+<p>Have a look at the <a href="http://www.gjt.org/servlets/JCVSlet/list/gjt/com/tinyplanet">
+latest development sources</a> via CVSWeb. DocWiz's version control is
+provided by the <a href="http://www.gjt.org/">Giant Java Tree</a>.
+
+<a name="todo">
+<H2><a href="index.html#top">DocWiz</a> : <a href="#top">Project DocWiz</a> :
+To Do</h2>
+Here's a bunch of features I'd like to see, in no particular order.
+<ul>
+<li>Icons
+<li>Screenshots
+<li>More completeness states
+<li>Command-line option for creation of comments
+<li>Save+Exit button
+<li>Save As menu item
+<li>Help|About not appearing under Solaris
+<li>Fix icons on tool bar
+<li>Improved source viewer
+<li>JavaDoc invoker
+<li>Tagged paragraph templates for Beans?
+<li>Templates based upon the superclass?
+<li>Header template
+<li>Line up comments with code
+<li>Multi-line tagged paragraphs
+<li>Read-only file check
+<li>Batch mode:  java DocWiz -recursive c:\Thisdir
+<li>Invoke external editor for fields
+<li>HTML editor
+<li>Better separation of user interface and data structure code for embedding in
+other environments
+<li>Your most wanted features! Write to <A HREF="mailto:docwiz@hyper-g.com">
+docwiz@hyper-g.com</A>
+
+</ul>
+
+
+
+<a name="status">
+<H2><a href="index.html#top">DocWiz</a> : <a href="#top">Project DocWiz</a> :
+Status</h2>
+DocWiz is currently quite stable and usable. It's lacking a couple of
+features that would really make it shine, but I use it all the time to
+document my own source code.
+
+<a name="versions">
+<H2><a href="index.html#top">DocWiz</a> : <a href="#top">Project DocWiz</a> :
+Versions</h2>
+<ul>
+<li><b>Beta 0.67 2001-09-07</b>. Many new features and enhancements, mostly courtesy of Lee Meador. Among other things:
+<ol>
+<li>Drag and drop works for moving tabs between
+the panes. Their  location
+is preserved when the program closes and
+reloads.
+<li>The unknown tags pane works. (Note: if you
+change a tag like "parm" to
+become "param" it will move off the unknown
+tags pane to its regular
+position, if there is a parameter with that
+name, when you change to
+another pane and then return.)
+<li>The split pane positions are now saved
+across program invocations. The
+bug that changed the pane size when you
+clicked another tab is fixed.
+<li>The tabs display correctly in the comment
+view and code view panes.
+Those panes now use courier font (which is
+monospaced).
+<li>More changes done to the unknown tags. Any
+tag that can not be entered
+on the main tag edit pane appears on the
+unknown tag pane. This would
+include multiple @return tags or @since tags.
+It would include @param
+tags with variable names not in the parameter
+list (but they appear in
+both places so you can edit or delete them.)
+<li>The default option in the Open file dialog
+is to only show .java
+files.
+<li>There is a preferences pane.
+<li>Preferences are present to select how the
+comment will look, to some
+degree. Single line comments can be allowed
+for each item type.
+<li>Preferences are present to tell how to
+handle private items. For each
+type of item (Method, Field, Constructor,
+Class, Interface) you can have
+private items appear normally, or in grey
+(but still selectable) or not
+be shown.
+<li>Preferences are present for the tab size
+and max line length.
+<li>There is a preference to tell whether to
+show the word public,
+private, etc. in the list pane with the code
+item's name.
+<li>The about box (and preferences box) appear
+centered on the main
+window.
+<li>Fixed a bug displaying comments and white
+space among the "tokens"
+returned from the parser. The comments were
+in reverse order. The code
+display looks much better.
+<li>There's a manifest file, so you can run
+the program with "java -jar
+DocWiz0.67.jar"
+</ol>
+<li><b>Beta 0.66 2000-07-12</b>. User interface is new AppPane style. Uses a Metal 
+theme to get system colors. Some user preferences now remembered between sessions,
+including working directory, window size and pane placement. Numerous small editing
+annoyance bugs cleaned up. Java 2 now required.
+<li><b>Beta 0.65 1999-06-24</b>. Fixed serious problem with commenting
+methods and constructors with no arguments (bug report by
+Matt Mastracci).
+
+<li><b>Beta 0.64 1999-06-10</b>. Fixed ordering of @param tags (bug report by
+June Smith). Inner class parameters and exceptions no longer reported as
+part of containing method (bug report by Matt Mastracci).
+
+<li><b>Beta 0.63 1999-05-16</b>. Fixed output bug
+which caused comments to show up twice (bug report from Keith Fetterman).
+Most file operations moved to CompilationUnit for easier extensibility. -l
+command line option added for number of columns for wrapping (Lee Wilson). -f
+command line switch to save a file immediately from the command line (Lee
+Wilson). Compilation unit (Java source file) I/O has been centralized, so
+hopefully this will make adding new command-line options a little easier.
+
+<li><b>Beta 0.62 1999-04-28</b>. Fixed comment parsing problem introduced in
+0.61. Command-line option to scan a list of files for uncommented code (Stefan
+Tandecki). Removed spurious error message when clicking "Cancel" button from
+file open dialog (bug report by Stefan Tandecki). Multiple files now accepted
+on the command line.
+
+<li><b>Beta 0.61 1999-04-22</b>. Upgraded to Swing 1.1 (Thorsten Ludewig and
+Simon Arthur). The binary
+version is now distributed in two forms: one which includes the Swing
+libraries, and one which doesn't. Comment parsing fix (Jochen Bedersdorfer).
+DocWiz now checks to see if the file has changed on disk while you're working
+on it and asks you how you want to proceed if it has. Miscellaneous spurious
+dependencies removed (bug reports from Boi Sletterink, Andreas Ludwig and
+Thorsten Ludewig). Vastly improved source view pane. Packages changed to
+com.tinyplanet for consistency on the Giant Java Tree, and the startup
+command changed to reflect this. Miscellaneous minor bugfixes.
+
+<li><b>Beta 0.60 1999-01-02</b>. You can now specify a
+file name when starting DocWiz. An additional class has been added to the
+default package in order to make it easier to start DocWiz from the command
+line. The last non-open-source class has been eliminated.
+
+<li><b>Beta 0.59
+1998-12-02</b>. GUI layout and textfield space improvements. Problem with
+switching away from an actively editing grid fixed. Word wrapping for tagged
+paragraphs. Tagged paragraphs with tab characters now parsed properly (bug
+report by Stephanie Bodoff). @deprecated tag support. @since support for
+methods and constructors. Compilation problem with reference to dlgInputFrm
+(report by Khalid).
+
+<li><b>Beta 0.58 1998-10-4</b>. @return <i>really</i> fixed. Some aesthetic changes.
+
+<li><b>Beta 0.57 1998-9-30</b>. Improved performance when formatted comment window
+is open. @return and @version fields fixed.
+
+<li><b>Beta 0.56 1998-9-25</b>. Fixed constructor toString() method to not say
+"null". Separated panels for ExecutableElements, Classes and Fields into separate
+files. Made panes resizable. Fixed bug with parsing newline-openbrace indent style
+declarations (bug report by Dr. Gregory A. Harrison and Eric W. Worden).
+Code contributed by Ramon M. Felciano to automatically update formatted comment
+window when typing. Element selection list now displays "completeness" of comments
+with an icon. Compile problem due to bad import statement (bug report by
+Rose). Data entry panels now initially hidden (bug
+report by Francesco "Kinkie" Chemolli).
+
+<li><b>Beta 0.55 1998-7-29</b>. Fixed problem with tab characters at beginning of
+comment lines (bug report courtesy of Stephen Zagerman). Fixed multi-line tagged
+paragraph problem (bug report courtesy of Paulseph-John Farrugia). Swing 1.0.3 now
+being used for development. Use of non-open-source libraries reduced. Comments
+now line up with the code elements per P-JF and Sun recommendation.
+
+<li><b>Beta 0.54 1998-7-19</b>. Source view pane added, UI changed to fit it in.
+
+<li><b>Beta 0.53 1998-7-5</b>. Many more bugs fixed, including problems with
+interfaces, UI display problems, creeping comments, and expanding tags. Also,
+I'm now using DocWiz to comment my code.
+
+<li><b>Beta 0.52 1998-7-3</b>. Use of Swing components expanded; reliance on
+non-open-source components reduced. Many minor bugs fixed.
+<li><b>Beta 0.51 1998-6-12</b>. Problem when writing multiple comments fixed.
+<li><b>Beta 0.5 1998-6-10</b>. Significantly more stable version
+ which uses <A HREF="http://www.suntest.com/JavaCC/">
+JavaCC</a> as its parsing engine. UI based upon Swing. Licensing defined as GPL.
+<li><b>(Unnumbered Version) 1998-1-11</b>. Based upon&nbsp; <A HREF="http://www.promigos.ch/kramer">iDoc
+- the Java(tm) Documentation QA Tool</A> and <A HREF="http://www.antLR.org/">ANTLR</A>, a
+parser creation tool for Java.
+
+</ul>
+
+
+
+</BODY>
+</HTML>

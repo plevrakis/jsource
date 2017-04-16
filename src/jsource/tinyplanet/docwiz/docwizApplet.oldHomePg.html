@@ -1,0 +1,200 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Simon Arthur">
+   <TITLE>The DocWiz Documentation Tool</TITLE>
+   <LINK REL="stylesheet" HREF="docwiz.css">
+</HEAD>
+<BODY>
+
+<H1>
+DocWiz</H1>
+
+DocWiz allows you to add JavaDoc comments to your source code easily.
+With DocWiz, there's no need to tediously hand-format JavaDoc comments,
+adding tags and comment structures for each method.
+For those without Java, here's a screenshot of what you're missing:
+<br>
+<a href = "ScreenShot.gif"><img src = "ScreenShot.gif" height = 420 width =
+550 border=4></a>
+<H2> Using DocWiz</H2>
+You can start using DocWiz by
+downloading the <A HREF="DocWizDist.jar">JAR file</A>  and then
+running DocWiz by doing the following: <OL> <LI> Add DocWizDist.jar to your
+CLASSPATH environment variable</LI>
+
+<LI>
+Run DocWiz with the following command:</LI>
+
+<PRE>java SIMONARTHUR.docwiz.appDocWiz</PRE>
+</OL>
+Windows/DOS users may want to try <a href="docwiz.bat">the batch file</a>, contributed by
+Nat Mills, instead.
+<p>
+You can then open a Java source file by choosing <B><FONT FACE="Arial,Helvetica">File
+| Open</FONT></B> from the menu. DocWiz will then provide a list of all
+the fields, methods and classes defined in that file. Click on any of these
+code elements to display a fill-in form for information about this code.
+
+<P>At any time, you can see what the JavaDoc comment for a code element
+will look like by choosing <B><FONT FACE="Arial,Helvetica">View | Formatted
+Comment</FONT></B>.
+
+<P>When you're satisfied with the changes you've made, select <B><FONT FACE="Arial,Helvetica">File
+| Save</FONT></B> to save your current file. DocWiz will make a backup
+copy of the original file by appending .BAK onto the end of the original
+name.
+<BR>&nbsp;
+<H2>
+Troubleshooting</H2>
+<p>You need a JDK 1.1 compatible JVM to run DocWiz.
+<p>Most users will need to <a
+href="http://java.sun.com:80/products/jfc/index.html"> download Swing
+1.0.3</a> from Javasoft's web site and add the swingall.jar file to the
+CLASSPATH before running DocWiz.
+<P>Some people have reported problems downloading the JAR file, seeing a Smart
+Update error. These users will need to save the file to disk. With Netscape:
+Right-click on <A HREF="DocWizDist.jar">this link to the JAR file</a> and
+choose <b><FONT FACE="Arial,Helvetica">Save Link As</font></b> from the popup
+menu.
+
+<a name="versions">
+<H2>Versions</H2>
+<ul>
+<li><b>Beta 0.59 1998-12-2</b>. GUI layout and textfield space improvements.
+Problem with switching away from an actively editing grid fixed. Word wrapping
+for tagged paragraphs. Tagged paragraphs with tab characters now parsed properly
+(bug report by Stephanie Bodoff). @deprecated tag support. @since support for
+methods and constructors. Compilation problem with reference to dlgInputFrm
+(report by Khalid).
+
+<li><b>Beta 0.58 1998-10-4</b>. @return <i>really</i> fixed. Some aesthetic changes.
+
+<li><b>Beta 0.57 1998-9-30</b>. Improved performance when formatted comment window
+is open. @return and @version fields fixed.
+
+<li><b>Beta 0.56 1998-9-25</b>. Fixed constructor toString() method to not say
+"null". Separated panels for ExecutableElements, Classes and Fields into separate
+files. Made panes resizable. Fixed bug with parsing newline-openbrace indent style
+declarations (bug report by Dr. Gregory A. Harrison and Eric W. Worden).
+Code contributed by Ramon M. Felciano to automatically update formatted comment
+window when typing. Element selection list now displays "completeness" of comments
+with an icon. Compile problem due to bad import statement (bug report by
+Rose). Data entry panels now initially hidden (bug
+report by Francesco "Kinkie" Chemolli).
+
+<li><b>Beta 0.55 1998-7-29</b>. Fixed problem with tab characters at beginning of
+comment lines (bug report courtesy of Stephen Zagerman). Fixed multi-line tagged
+paragraph problem (bug report courtesy of Paulseph-John Farrugia). Swing 1.0.3 now
+being used for development. Use of non-open-source libraries reduced. Comments
+now line up with the code elements per P-JF and Sun recommendation.
+
+<li><b>Beta 0.54 1998-7-19</b>. Source view pane added, UI changed to fit it in.
+
+<li><b>Beta 0.53 1998-7-5</b>. Many more bugs fixed, including problems with
+interfaces, UI display problems, creeping comments, and expanding tags. Also,
+I'm now using DocWiz to comment my code.
+
+<li><b>Beta 0.52 1998-7-3</b>. Use of Swing components expanded; reliance on
+non-open-source components reduced. Many minor bugs fixed.
+<li><b>Beta 0.51 1998-6-12</b>. Problem when writing multiple comments fixed.
+<li><b>Beta 0.5 1998-6-10</b>. Significantly more stable version
+ which uses <A HREF="http://www.suntest.com/JavaCC/">
+JavaCC</a> as its parsing engine. UI based upon Swing. Licensing defined as GPL.
+<li><b>(Unnumbered Version) 1998-1-11</b>. Based upon&nbsp; <A HREF="http://www.promigos.ch/kramer">iDoc
+- the Java(tm) Documentation QA Tool</A> and <A HREF="http://www.antLR.org/">ANTLR</A>, a
+parser creation tool for Java.
+
+</ul>
+</a>
+
+<H2>
+Credits and Copyrights</H2>
+This software was created by Simon Arthur.
+DocWiz version 0.59Beta, Copyright (c) 1998 Simon Arthur.
+DocWiz comes with ABSOLUTELY NO WARRANTY; for details
+see the file <A HREF="LICENSE.txt">LICENSE.txt</A>.  This is free software, and
+you are welcome
+to redistribute it under certain conditions; see LICENSE.txt
+for details.
+
+<p>Portions of the binary version are (c) 1997-1998 Borland International.
+The Java grammar is (c) Sun Microsystems, Inc.
+
+<H2>Bugs</H2>
+
+<li>There's a problem with aligning the JavaDoc comment when the code item is
+indented with tabs.
+<li>Under Solaris, the About dialog doesn't display correctly.
+<li>DocWiz doesn't check for read-only files, bad when you're using some version
+control systems.
+
+<H2>
+To Do</H2>
+Upcoming features include:<br>
+<ul>
+<li>Elimination of all non-open source libraries. It'll be tough to eliminate
+Borland's GridBagConstraints2 while keeping a maintainable UI.
+<li>Better separation of user interface and data structure code for embedding in
+other environments
+<li>Your most wanted features! Write to <A HREF="mailto:docwiz@hyper-g.com">
+docwiz@hyper-g.com</A>
+</ul>
+
+<H2>Links and contacts</H2>
+
+<h3>Getting in touch</h3>
+If you have any comments, let me hear them! Bug reports, features and
+suggestions to: <A HREF="mailto:docwiz@hyper-g.com">docwiz@hyper-g.com</A>.
+Or post your message to the mailing list.
+
+<h3>Subscribe to the docwiz mailing list</h3>
+<form method=GET action="http://www.egroups.com/subscribe">
+Enter your e-mail address:
+<input type=text name="emailaddr" value="your e-mail" size=18>
+<input type=hidden name="listname" value="docwiz">
+<input type=submit name="SubmitAction" VALUE="Subscribe"></td>
+</form>
+
+
+<h3>DocWiz <a href="http://www.egroups.com/list/docwiz/">mailing list
+archive</a></h3>
+See the past messages to the DocWiz mailing list
+
+
+<h3>The <a href="docWizSource.zip">source code</a> is available. </h3>
+It should be interesting to Java developers, as it
+includes an application of using JavaCC in a GUI environment. Unless you're using
+JBuilder, you'll need <a href="DocWizDist.jar">the JAR file</a> to compile the
+program. The JAR file contains classes for which I'm not allowed to distribute the source.
+
+<h3><A HREF="http://www.suntest.com/JavaCC/">JavaCC Grammar</a></h3>
+<p>If you want to modify the grammar, you'll need <A HREF="http://www.suntest.com/JavaCC/">
+JavaCC</a>.
+
+<h3>An enlightened IDE: <A HREF="http://www.inprise.com/jbuilder/">JBuilder</A></h3>
+This program was written with Inprise/Borland's excellent <A HREF="http://www.inprise.com/jbuilder/">JBuilder
+Client/Server</A> development environment.
+
+<h3><A HREF="../home.html">Simon's Main Page</A></h3>
+My <A HREF="../home.html">home page</A> includes links to information about
+me, including my other Java applets.
+
+<h3>The Buzz on DocWiz</h3>
+<a href="http://www.afu.com/javafaq.html#Further Resources">The Java Programmers FAQ</a>
+mentions DocWiz. If you work with Java, you should read it. Now.
+<p>
+DocWiz is mentioned in Sun's
+<a href ="http://java.sun.com/products/jdk/javadoc/faq.html#writingtools">Javadoc FAQ</a>,
+also a must read document.
+
+<p>It got a mention in <a href="http://www.softwareview.com/thesof09.htm">The
+Software View</a>
+
+<p><a href="http://www.developer.com/directories/cmpjava/dir.java.util.general.5.html">
+Developer.com calls DocWiz "Useful"</a>
+ and gives it one of those little fan icons: <img src="http://www.developer.com/images/cool.gif">
+</p>
+
+</BODY>
+</HTML>
