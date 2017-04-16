@@ -1,0 +1,4 @@
+public void setYourSetterName( /* Your parameter */)
+{  /* start method */
+   // insert here the action statements
+}  /* end method */

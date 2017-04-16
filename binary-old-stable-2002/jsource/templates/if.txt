@@ -1,0 +1,6 @@
+if ( /* provide here the condition */ )
+{  /* ... start if */
+   // condition true code
+}  else {
+   // condition false code
+}  /* ... end if */

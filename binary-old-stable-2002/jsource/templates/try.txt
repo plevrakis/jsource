@@ -1,0 +1,14 @@
+try
+{  /* ... start try */
+   // insert here the action statement
+}  /* ... end try */
+catch (Exception ex)  // adapt this exception to your needs
+{  /* ... start catch */
+   ex.printStackTrace();
+   // insert here the action statements e.g.
+   // System.out.println("Exception occured. ex="+ex);
+}  /* ... end catch */
+finally 
+{  /* ... start finally */
+   // insert here your clean-up actions
+}  /* ... end finally */

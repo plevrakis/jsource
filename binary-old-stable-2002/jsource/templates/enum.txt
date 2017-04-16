@@ -1,0 +1,7 @@
+Enumeration enum = /* replace comment with your vector name */.elements();
+while (enum.hasMoreElements())
+{  /* ... start while */
+   // your code
+   Object element = enum.nextElement();
+   // your code
+}  /* ... end while */

@@ -1,0 +1,7 @@
+/** 
+ * Provide here your class description
+ * description continuation (if needed)
+ * <br>
+ * @author   authors name  last changed: mm/dd/yyyy
+ * @version  x.y
+ */

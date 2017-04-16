@@ -1,0 +1,4 @@
+for (int i = aStartValue; i < aEndValue; i=i+1)
+{  /* ... start for */
+   // insert here the action statements
+}  /* ... end for */

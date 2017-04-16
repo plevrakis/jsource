@@ -1,0 +1,1 @@
+private static  String copyright="© authors name, Year1, Year2, .....";
