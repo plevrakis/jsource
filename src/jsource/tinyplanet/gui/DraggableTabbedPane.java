@@ -34,7 +34,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //					another tab-pane there and clicking it then going back to the problem
 //					tab-pane and clicking clears up the problem.
 
-package com.tinyplanet.gui;
+package tinyplanet.gui;
 
 import javax.swing.JComponent;
 import javax.swing.JTabbedPane;
@@ -114,7 +114,7 @@ public class DraggableTabbedPane extends JTabbedPane implements	DNDComponentInte
 	}
 
 // Methods:
-	
+
 	/**
 	 * implements DNDComponentInterface - adds AppPanes to this tab pane.
 	 */
@@ -139,16 +139,16 @@ public class DraggableTabbedPane extends JTabbedPane implements	DNDComponentInte
 				this.paneList.add(s);
 //				System.out.println("DraggableTabbedPane.addElement: "+this.hashCode()+": calling addTab with "+s);
 				this.addTab(a.getTitle(), null, (Component)s, "");
-				
-//				if (getSelectedIndex() == -1) 
+
+//				if (getSelectedIndex() == -1)
 				if (getTabCount() == 1)
-				{ 
+				{
 //					setSelectedComponent((Component)s);
 					((Component)s).setVisible(true);
 				}
 //
 				((JComponent)s).invalidate();
-//				
+//
 //				Shelf parent = (Shelf)this.getParent();
 ////				parent.revalidate();
 //        		parent.repaint();

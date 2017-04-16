@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.tinyplanet.gui;
+package tinyplanet.gui;
 
 import java.awt.Container;
 
@@ -46,10 +46,10 @@ public interface AppPane {
    * @param s The Shelf to move to.
    */
   public void moveTo(Shelf s);
-  
+
   /**
    * This is here so that we don't have to do all that funky casting.
    */
   public Container getParent();
-  
+
 }

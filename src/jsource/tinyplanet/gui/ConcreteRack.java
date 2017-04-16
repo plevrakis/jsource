@@ -18,12 +18,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
 // History:
-// 4/6/2001 Lee Meador (LeeMeador@usa.net) 
+// 4/6/2001 Lee Meador (LeeMeador@usa.net)
 //				Minimum size is no longer zero.
 // 5/26/2001 lmm	- when resizing the panes the extra space goes into the right or top
 //					splits rather than the default (right and bottom) ones.
 
-package com.tinyplanet.gui;
+package tinyplanet.gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -130,7 +130,7 @@ public class ConcreteRack extends JFrame implements Rack {
     newSplitPane.setDividerLocation(100);					// default width/height in pixels
     try {
       newSplitPane.setResizeWeight(resizeWeight);
-    } catch (NoSuchMethodError nsme) { 
+    } catch (NoSuchMethodError nsme) {
 		  // this is a fallback for JDK < 1.3
       System.err.println("Can't set resizeWeight for SplitPane.");
     }

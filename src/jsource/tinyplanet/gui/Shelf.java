@@ -20,7 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // History:
 //	7/16/2001 lmm	- add setSelectedIndex method to directly set the current pane.
 
-package com.tinyplanet.gui;
+package tinyplanet.gui;
 
 import javax.swing.JPanel;
 import java.awt.dnd.DropTargetListener;
@@ -42,8 +42,8 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Iterator;
 
-public class Shelf extends JPanel 
-//implements DropTargetListener, DragGestureListener, DragSourceListener 
+public class Shelf extends JPanel
+//implements DropTargetListener, DragGestureListener, DragSourceListener
 {
   protected DraggableTabbedPane tabPane;
 //  protected DragSource dragSource;
@@ -59,7 +59,7 @@ public class Shelf extends JPanel
 //    dragSource = DragSource.getDefaultDragSource();
 //    dragSource.createDefaultDragGestureRecognizer( this, DnDConstants.ACTION_MOVE, this);
     this.setLayout(new GridLayout(1,1));
-	
+
       tabPane = new DraggableTabbedPane();
       this.add(tabPane);
   }
@@ -103,7 +103,7 @@ public class Shelf extends JPanel
 //			Component thePane = (Component)iter.next();
 //			thePane.setVisible(false);
 //		}
-		if (tabPane.getTabCount() > 0) {  
+		if (tabPane.getTabCount() > 0) {
 			tabPane.setSelectedIndex(tabIndex);
 		}
 		return;
@@ -116,7 +116,7 @@ public class Shelf extends JPanel
 	}
 	if (theList == null) {
 		theList = new LinkedList();
-	} 
+	}
 	return theList;
   }
 

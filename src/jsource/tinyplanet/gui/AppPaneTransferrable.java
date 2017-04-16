@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.tinyplanet.gui;
+package tinyplanet.gui;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -35,7 +35,7 @@ public class AppPaneTransferrable implements Transferable {
   static final String HUMAN_NAME = "AppPane";
   /** Class name for appending to the MIME type.
    */
-  static final String CLASS_NAME = ";class=com.tinyplanet.gui.AppPane";
+  static final String CLASS_NAME = ";class=tinyplanet.gui.AppPane";
   /** The AppPane which is being transferred
    */
   AppPane appPane;
@@ -44,7 +44,7 @@ public class AppPaneTransferrable implements Transferable {
   public static DataFlavor apFlavor;
   /**    */
   public static DataFlavor localApFlavor;
-  
+
   public static DataFlavor[] flavors;
 
   static {
