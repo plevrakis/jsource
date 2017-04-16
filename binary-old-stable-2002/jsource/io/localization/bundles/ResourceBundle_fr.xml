@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE>
+  <LANGUAGE name="fr">
+    <RES key="language" type="String">French</RES>
+    <RES key="file" type="String">Fichier</RES>
+    <RES key="open" type="String">Ouvrir</RES>
+    <RES key="close" type="String">Fermer</RES>
+    <RES key="new" type="String">Nouveau</RES>
+    <RES key="edit" type="String">Edition</RES>
+    <RES key="delete" type="String">Supprimer</RES>
+    <RES key="cut" type="String">Couper</RES>
+    <RES key="copy" type="String">Copier</RES>
+    <RES key="paste" type="String">Coller</RES>
+  </LANGUAGE>
+</RESOURCE>
+

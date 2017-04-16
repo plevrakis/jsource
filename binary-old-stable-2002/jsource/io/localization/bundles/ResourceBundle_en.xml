@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE>
+  <LANGUAGE name="en">
+  
+    <RES key="language"      type="String">English</RES>
+    <RES key="exit"          type="String">Exit</RES>
+    <RES key="file"          type="String">File</RES>
+    <RES key="edit"          type="String">Edit</RES>
+    <RES key="view"          type="String">View</RES>
+    <RES key="tools"         type="String">Tools</RES>
+    <RES key="help"          type="String">Help</RES>
+    <RES key="open"          type="String">Open</RES>
+    <RES key="close"         type="String">Close</RES>
+    <RES key="save"          type="String">Save</RES>
+    <RES key="saveas"        type="String">Save As</RES>
+    <RES key="new"           type="String">New</RES>
+    <RES key="delete"        type="String">Delete</RES>
+    <RES key="undo"          type="String">Undo</RES>
+    <RES key="redo"          type="String">Redo</RES>
+    <RES key="cut"           type="String">Cut</RES>
+    <RES key="copy"          type="String">Copy</RES>
+    <RES key="paste"         type="String">Paste</RES>
+    <RES key="selectall"     type="String">Select All</RES>
+    <RES key="gotoline"      type="String">Go to line...</RES>
+    <RES key="indent"        type="String">Indent Line(s)</RES>
+    <RES key="indentdesc"    type="String">Indents the selected lines</RES>
+    <RES key="indPrevLine"   type="String">\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)</RES>
+    <RES key="comment"       type="String">Comment Line(s)</RES>
+    <RES key="commentdesc"   type="String">Comments the selected lines</RES>
+    <RES key="uncomment"     type="String">Uncomment Line(s)</RES>
+    <RES key="uncommentdesc" type="String">Uncomments the selected lines</RES>
+    <RES key="whatline"      type="String">What line would you like to go to?</RES>
+    <RES key="invalidline"   type="String">Invalid line number</RES>
+    <RES key="noline"        type="String">No line number was entered. Try again.</RES>
+    <RES key="lineoffrange"  type="String">Invalid or out of range line number. Try again.</RES>
+    <RES key="linenumbers"   type="String">Line Numbers</RES>
+    <RES key="overwrite"     type="String">Enable/Disable overwrite</RES>
+    <RES key="code"          type="String">Code</RES>
+    <RES key="guitemp"       type="String">GUI Templates</RES>
+    <RES key="beantemp"      type="String">Bean Templates</RES>
+    <RES key="javadoctemp"   type="String">JavaDoc Templates</RES>
+    <RES key="debugtemp"     type="String">Debug Templates</RES>
+    <RES key="looptemp"      type="String">Loop Templates</RES>
+    <RES key="moretemp"      type="String">More Templates</RES>
+    <RES key="setter"        type="String">Setter Method</RES>
+    <RES key="getter"        type="String">Getter Method</RES>
+    <RES key="classdesc"     type="String">Class Description</RES>
+    <RES key="compile"       type="String">Compile</RES>
+    <RES key="compiling"     type="String">Compiling</RES>
+    <RES key="cannotcompile" type="String">Cannot compile</RES>
+    <RES key="running"       type="String">Running</RES>
+    <RES key="cannotrun"     type="String">Cannot run</RES>
+    <RES key="procfailure"   type="String">Process failure</RES>
+    <RES key="procsuccess"   type="String">Process success</RES>
+    <RES key="unknowncomprm" type="String">Unknown problem</RES>
+    <RES key="run"           type="String">Run</RES>
+    <RES key="applet"        type="String">Applet Viewer</RES>
+    <RES key="browser"       type="String">Preview Web Page</RES>
+    <RES key="apiviewer"     type="String">Java API Viewer</RES>
+    <RES key="apiviewerdesc" type="String">View Core and external Java APIs</RES>
+    <RES key="toolsetup"     type="String">Set paths to external tools</RES>
+    <RES key="helpindex"     type="String">Help</RES>
+    <RES key="findcoreapi"   type="String">Find Core Java API</RES>
+    
+    <RES key="newdesc"       type="String">Open a new empty document</RES>
+    <RES key="opendesc"      type="String">Open the selected file</RES>
+    <RES key="closedesc"     type="String">Close the current file</RES>
+    <RES key="cutdesc"       type="String">Cut selected text</RES>
+    <RES key="copydesc"      type="String">Copy text to clipboard</RES>
+    <RES key="pastedesc"     type="String">Paste text from clipboard</RES>
+    <RES key="savedesc"      type="String">Save changes of the current file</RES>
+    <RES key="saveasdesc"    type="String">Save changing the existing file name</RES>
+    <RES key="undodesc"      type="String">Undo last action</RES>
+    <RES key="redodesc"      type="String">Redo last action</RES>
+    <RES key="selectalldesc" type="String">Select the entire document</RES>
+    <RES key="compiledesc"   type="String">Compile</RES>
+    <RES key="antdesc"       type="String">Build with Ant</RES>
+    <RES key="rundesc"       type="String">Run Java Application</RES>
+    <RES key="appletdesc"    type="String">Run Applet</RES>
+    <RES key="browserdesc"   type="String">Open Web Browser</RES>
+    <RES key="nowebpage"     type="String">This is not a web page!</RES>
+        
+    <RES key="untitleddoc"   type="String">Untitled Document</RES>
+    <RES key="untitledtab"   type="String">Untitled</RES>
+    <RES key="lineslabel"    type="String">Lines:</RES>
+    <RES key="charslabel"    type="String">Characters:</RES>
+    
+    <RES key="javahome"      type="String">Java Home</RES>
+    <RES key="syslocale"     type="String">System Locale</RES>
+    <RES key="sys"           type="String">System</RES>
+    <RES key="property"      type="String">Property</RES>
+    <RES key="value"         type="String">Value</RES>
+    <RES key="version"       type="String">JSource Version 2.0</RES>
+    <RES key="jversion"      type="String">Version</RES>
+    <RES key="oversion"      type="String">version</RES>
+    <RES key="freememory"    type="String">Free Memory</RES>
+    <RES key="totalmemory"   type="String">Total Memory</RES>
+    <RES key="runon"         type="String">running on</RES>
+    <RES key="osname"        type="String">Operating System</RES>
+    <RES key="about"         type="String">About</RES>
+    <RES key="info"          type="String">Info</RES>
+    <RES key="aboutjsource"  type="String">About JSource</RES>
+    
+    <RES key="gencode"       type="String">Code Generator</RES>
+    <RES key="gencodedesc"   type="String">Launch code generator</RES>
+    <RES key="import"        type="String">Import</RES>
+    <RES key="add"           type="String">Add</RES>
+    <RES key="remove"        type="String">Remove</RES>
+    <RES key="removeall"     type="String">Remove All</RES>
+    <RES key="generate"      type="String">Generate</RES>
+    <RES key="readonly"      type="String">Readonly</RES>
+    <RES key="propertyname"  type="String">Property name</RES>
+    <RES key="propertytype"  type="String">Property type</RES>
+    <RES key="deftitle"      type="String">Define properties - Import classes</RES>
+    <RES key="definition"    type="String">Definition</RES>
+    <RES key="language"      type="String">Language</RES>
+    <RES key="classname"     type="String">Class name</RES>
+    <RES key="members"       type="String">Members</RES>
+    <RES key="constructors"  type="String">Constructors</RES>
+    <RES key="novaluesmsg"   type="String">No values to load!</RES>
+    <RES key="selectrowmsg"  type="String">You must select a row!</RES>
+    
+    <RES key="findreplace"   type="String">Find/Replace</RES>
+    <RES key="findrepdesc"   type="String">Find/replace words and characters</RES>
+    <RES key="wrappedmsg"    type="String">Search wrapped to beginning</RES>
+    <RES key="searchtext"    type="String">Search text</RES>
+    <RES key="notfound"      type="String">not found</RES>
+    <RES key="findnext"      type="String">Find Next</RES>
+    <RES key="replace"       type="String">Replace</RES>
+    <RES key="repfindnext"   type="String">Replace/Find Next</RES>
+    <RES key="replacefailed" type="String">Replace failed</RES>
+    <RES key="replaceall"    type="String">Replace All</RES>
+    <RES key="replaced"      type="String">Replaced </RES>
+    <RES key="occurrence"    type="String">occurrence</RES>
+    <RES key="find"          type="String">Find</RES>
+    <RES key="matchcase"     type="String">Match Case</RES>
+    
+    <RES key="pathsetitle"   type="String">Set paths to external tools</RES>
+    <RES key="setpath"       type="String">Set</RES>
+    <RES key="findsdk"       type="String">Find SDK</RES>
+    <RES key="findant"       type="String">Find ANT</RES>
+    <RES key="findbrowser"   type="String">Find Web Browser</RES>
+    
+    <RES key="asksave"       type="String">has been modified. Save before closing?</RES>
+    <RES key="asksavetitle"  type="String">Save</RES>
+    <RES key="askrload"      type="String">The file's time stamp has changed. Do you want to reload</RES>
+    <RES key="askrloadtitle" type="String">Reload</RES>
+    <RES key="askoverwrite"  type="String">already exists. Do you want to overwrite it</RES>
+    <RES key="overwrite"     type="String">Overwrite</RES>
+    
+    <RES key="jdocwiz"       type="String">Javadoc Wizard</RES>
+    <RES key="jdocwizdesc"   type="String">Launch Javadoc Wizard</RES>
+    <RES key="cplabel"       type="String">Classpath</RES>
+    <RES key="driver"        type="String">Driver Class</RES>
+    <RES key="buildfile"     type="String">Build File</RES>
+    <RES key="appletfile"    type="String">Applet File (.html)</RES>
+    <RES key="cmdline"       type="String">Command Line:</RES>
+    <RES key="rootpath"      type="String">Root Path</RES>
+    <RES key="setroot"       type="String">Set Root Path</RES>
+    <RES key="projname"      type="String">Project Name</RES>
+    <RES key="newproj"       type="String">New Project</RES>
+    <RES key="newprojdesc"   type="String">Create a new project environment</RES>
+    <RES key="adddir"        type="String">Add Directory</RES>
+    <RES key="addarchive"    type="String">Add Archive</RES>
+    <RES key="setrootpath"   type="String">Set Root Path</RES>
+    <RES key="archfiles"     type="String">Archive Files</RES>
+    <RES key="jarview"       type="String">Jar Viewer</RES>
+    <RES key="jarviewdesc"   type="String">View the contents of .jar file</RES>
+    <RES key="notjavafile"   type="String">This is not a Java file!</RES>
+
+    <!-- ============================================================ -->
+    <!-- TABBED PANE TEXT VALUES                                      -->
+    <!-- ============================================================ -->
+    <RES key="codeditor"     type="String">Code Editor</RES>
+    <RES key="codeditortip"  type="String">JSource Code Editor</RES>
+    <RES key="systerm"       type="String">System Terminal</RES>
+    <RES key="systermtip"    type="String">JSource System Terminal</RES>
+    <RES key="notepad"       type="String">Notepad</RES>
+    <RES key="notepadtip"    type="String">JSource Notepad</RES>
+    
+    <!-- ============================================================ -->
+    <!-- ANT PROPERTIES AND MESSAGES                                  -->
+    <!-- ============================================================ -->
+    <RES key="ant"           type="String">Ant</RES>
+    <RES key="anttarget"     type="String">init</RES>
+    <RES key="anttargetlbl"  type="String">Target name:</RES>
+    <RES key="antexecbtn"    type="String">Execute Ant</RES>
+    <RES key="antexecmnc"    type="String">E</RES>
+    <RES key="antexectip"    type="String">Execute Ant for selected target</RES>
+    <RES key="antpathlbl"    type="String">Path:</RES>
+    <RES key="antbuildlbl"   type="String">Build file:</RES>
+    <RES key="antopenbuild"  type="String">Open Build File</RES>
+    <RES key="antrefresh"    type="String">Refresh Targets</RES>
+
+    <!-- ============================================================ -->
+    <!-- CONSOLE PROPERTIES AND MESSAGES                              -->
+    <!-- ============================================================ -->
+    <RES key="console.errorColor"       type="String">#FF0000</RES>
+    <RES key="console.promptColor"      type="String">#FFFF00</RES>
+    <RES key="console.outputColor"      type="String">#FFFFFF</RES>
+    <RES key="console.infoColor"        type="String">#46FF46</RES>
+    <RES key="console.bgColor"          type="String">#000000</RES>
+    <RES key="console.selectionColor"   type="String">#CCCCFF</RES>
+    <RES key="console.welcome"          type="String">JSource System terminal - Type help for a help summary</RES>
+    <RES key="console.killed"           type="String">Killed {0}</RES>
+    <RES key="console.exited"           type="String">Finished executing</RES>
+    <RES key="console.error"            type="String">Command not found</RES>
+    <RES key="console.missing.argument" type="String">command: Missing argument</RES>
+    <RES key="console.cd.error"         type="String">cd: Invalid directory</RES>
+    <RES key="console.ls.error"         type="String">ls: Invalid directory</RES>
+    <RES key="console.help"             type="String">
+    JSource Console - System Terminal
+    Use it as any system terminal.
+    Press Ctrl+d to kill a process
+    
+    UP and DOWN browse last 25 commands, Shift+TAB complete a command if already entered, ESC delete line
+    and TAB completes file name if found in current directory
+    
+    Built in commands:
+    {0}
+    Internal variables:
+    $j (jsource's dir) 
+    $h (home dir) 
+    $d (current dir) 
+    $f (current file) 
+    $s (selected text)
+    $p (current file name) 
+    $e (current file name, no extension) 
+    $n (current file directory)
+    
+    </RES>
+    
+    <RES key="console.ls.help" type="String">ls command - JSource Console.
+    Lists current directory.
+    
+    Usage: ls [-hmlfndariks]
+    -h	Lists hidden files
+    -m	Display more infos
+    -l	Display long dates
+    -f	Display full names
+    -n	Disable dates display
+    -d	Lists directories only
+    -a	Lists files only
+    -r	Lists sub-directories
+    -i	Disable summary
+    -k	Display size in kilobytes
+    -s	Sort files alphabetically by name
+    (you can use wildcards) 
+    </RES>
+    
+    <RES key="console.cd.help" type="String">cd command - JSource Console.
+    Changes directory to specified absolute or relative one.
+    
+    Usage: cd &lt;path&gt;
+    &lt;path&gt; can be either absolute (cd C:\\Java) or relative (cd Java\\bin).
+    You can use both / and \\ as path separators (cd Profiles\\Gfx/Favorites).
+    Each . (dot) beyond the first gets parent directory: cd .. gets parent directory
+    cd ... is equivalent to cd .. cd .. (and so on...).
+    ~ gets home directory (cd ~/kde), / or \\ at first place is root (cd /root, cd \\windows).</RES>
+    <RES key="console.cd.command.help"     type="String">`cd -help' for more infos</RES>
+    <RES key="console.clear.command.help"  type="String">clears screen</RES>
+    <RES key="console.exit.command.help"   type="String">quits JSource</RES>
+    <RES key="console.help.command.help"   type="String">help summary</RES>
+    <RES key="console.home.command.help"   type="String">changes to JSource directory</RES>
+    <RES key="console.http.command.help"   type="String">opens `url'</RES>
+    <RES key="console.ls.command.help"     type="String">`ls -help' for more infos</RES>
+    <RES key="console.pwd.command.help"    type="String">displays current directory</RES>
+    
+    
+    <RES key="filenoexist"   type="String">does not exist!</RES>
+    <RES key="cancel"        type="String">Cancel</RES>
+    <RES key="cancelmnc"     type="String">C</RES>
+    <RES key="versionwarn"   type="String">WARNING: Swing must be run with a 1.1.2 or higher version VM!</RES>
+    
+  </LANGUAGE>
+</RESOURCE>
