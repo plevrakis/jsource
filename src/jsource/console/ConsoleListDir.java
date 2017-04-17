@@ -39,7 +39,7 @@ import jsource.io.localization.*;
  */
 public class ConsoleListDir {
 	private static XMLResourceBundle bundle = null;
-    private static Console parent = null;
+    private static Console2 parent = null;
     private static int indentSize = 0;
     private static String indent = new String();
     private static String pattern = new String();
@@ -69,7 +69,7 @@ public class ConsoleListDir {
      * @param cparent Console which executed the command
      * @param args The command arguments
      */
-    public static void list(Console cparent, String args) {
+    public static void list(Console2 cparent, String args) {
         parent = cparent;
         boolean list = true;
 

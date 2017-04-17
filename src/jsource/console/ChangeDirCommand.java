@@ -43,7 +43,7 @@ public class ChangeDirCommand extends Command {
         return bundle.getValueOf("console.cd.command.help");
     }
 
-    public boolean handleCommand(Console console, String command) {
+    public boolean handleCommand(Console2 console, String command) {
         if (command.equalsIgnoreCase(COMMAND_NAME) || command.equalsIgnoreCase(COMMAND_NAME + " -help")) {
             console.help(bundle.getValueOf("console.cd.help"));
             return true;

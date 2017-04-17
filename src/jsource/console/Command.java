@@ -24,21 +24,29 @@ package jsource.console;
  * @author Panagiotis Plevrakis - JSource integration (7/2003)
  */
 public abstract class Command {
+    /**
+     * 
+     */
     public Command next = null;
 
     /**
      * Return the command name. Displayed in console help summary.
+     * @return 
      */
     public abstract String getCommandName();
 
     /**
      * Return the command summary. Displayed in console help summary.
+     * @return
      */
     public abstract String getCommandSummary();
 
     /**
      * Handles a command given by the console. If the command can be
      * handled, return true, false otherwise.
+     * @param console 
+     * @param command 
+     * @return 
      */
-    public abstract boolean handleCommand(Console console, String command);
+    public abstract boolean handleCommand(Console2 console, String command);
 }

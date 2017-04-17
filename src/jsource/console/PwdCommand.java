@@ -42,7 +42,7 @@ public class PwdCommand extends Command {
         return bundle.getValueOf("console.pwd.command.help");
     }
 
-    public boolean handleCommand(Console console, String command) {
+    public boolean handleCommand(Console2 console, String command) {
         if (command.equalsIgnoreCase(COMMAND_NAME)) {
             console.output(System.getProperty("user.dir"));
             return true;

@@ -45,7 +45,7 @@ public class ClearCommand extends Command {
         return bundle.getValueOf("console.clear.command.help");
     }
 
-    public boolean handleCommand(Console console, String command) {
+    public boolean handleCommand(Console2 console, String command) {
         if (command.equalsIgnoreCase(COMMAND_NAME)
         		|| command.equalsIgnoreCase(COMMAND_NAME_ALTERNATE)) {
             try {

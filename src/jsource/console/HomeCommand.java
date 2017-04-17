@@ -43,7 +43,7 @@ public class HomeCommand extends Command {
         return bundle.getValueOf("console.home.command.help");
     }
 
-    public boolean handleCommand(Console console, String command) {
+    public boolean handleCommand(Console2 console, String command) {
         if (command.equalsIgnoreCase(COMMAND_NAME)) {
             System.getProperties().put("user.dir", JSConstants.USER_HOME);
             return true;
